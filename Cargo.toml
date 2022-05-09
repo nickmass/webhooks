@@ -1,0 +1,7 @@
+[workspace]
+
+members = [
+        "server",
+        "dispatch",
+        "config"
+]
