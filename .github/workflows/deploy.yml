@@ -1,0 +1,16 @@
+name: Deploy
+
+on: workflow_dispatch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy Webhook
+        uses: distributhor/workflow-webhook@v2.0.3
+        env:
+          webhook_url: https://nickmass.com/hooks/deploy
+          webhook_secret: ${{ secrets.WEBHOOK_DEPLOY_SECRET }}
+          webhook_auth: ${{ secrets.WEBHOOK_DEPLOY_CLIENT_ID }}
+          webhook_type: json

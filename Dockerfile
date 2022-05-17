@@ -12,6 +12,7 @@ RUN cargo build --release --bin server
 
 FROM docker.io/debian:stable-slim
 RUN apt-get -y update && apt-get -y install ca-certificates openssl
+RUN mkdir -p /app/data
 
 WORKDIR /app/
 COPY --from=builder /build/target/release/server /app/
